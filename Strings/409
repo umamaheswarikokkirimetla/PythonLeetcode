@@ -1,0 +1,15 @@
+class Solution:
+    def longestPalindrome(self, s: str) -> int:
+        cc=Counter(s)
+        l=0
+        of=False
+        for cnt in cc.values():
+            if cnt % 2 == 0:
+                l += cnt
+            else:
+                l += cnt-1
+                of = True
+        if of:
+            l+=1
+        return l
+        
