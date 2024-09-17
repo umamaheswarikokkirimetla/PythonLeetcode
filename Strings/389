@@ -1,0 +1,23 @@
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        cc=defaultdict(int)
+        for c in s:
+            cc[c] += 1
+        for c in t:
+            if cc[c]>0:
+                cc[c]-=1
+            else:
+                return cclass Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        result = 0
+        # XOR all characters in s
+        for char in s:
+            result ^= ord(char)
+        # XOR all characters in t
+        for char in t:
+            result ^= ord(char)
+        
+        # Convert result back to character
+        return chr(result)
+
+                
