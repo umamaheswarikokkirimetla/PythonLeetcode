@@ -1,0 +1,13 @@
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        mc=defaultdict(int)
+        for c in magazine:
+            mc[c] += 1
+        
+        for char in ransomNote:
+            if mc[char]>0:
+                mc[char]-=1
+            else:
+                return False
+        return True
+        
