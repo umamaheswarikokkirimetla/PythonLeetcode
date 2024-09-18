@@ -1,0 +1,7 @@
+class Solution:
+    def repeatedSubstringPattern(self, s: str) -> bool:
+        doubled=s+s
+        ss=doubled[1:-1]
+        return s in ss
+
+        
