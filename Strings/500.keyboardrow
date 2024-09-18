@@ -1,0 +1,19 @@
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+        r1=set('qwertyuiop')
+        r2=set('asdfghjkl')
+        r3=set('zxcvbnm')
+        result=[]
+        for word in words:
+            lw=word.lower()
+            if lw[0] in r1:
+                cr=r1
+            elif lw[0] in r2:
+                cr=r2
+            elif lw[0] in r3:
+                cr=r3
+            else:
+                continue
+            if all(char in cr for char in lw):
+                result.append(word)
+        return result
